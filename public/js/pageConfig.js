@@ -8,7 +8,7 @@ function init() {
   $('#logout').click(logout);
   $('#changeInfo').click(changeInfo);
   $('#saveChanges').click(saveChanges);
-  
+
 }
 
 function changeInfo(){
@@ -18,7 +18,6 @@ function changeInfo(){
 
 function saveChanges() {
   var username = $('#title').text();
-  //   $('#saveChanges').attr('hidden', true);
     $('#bio').attr('contentEditable', false);
     var bio = $('#bio').text()
     $.ajax({
