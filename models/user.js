@@ -8,7 +8,9 @@ var User;
 
 var userSchema = Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  email: {type: String},
+  bio: {type: String}
 });
 
 userSchema.statics.register = function(user, cb) {
@@ -41,6 +43,7 @@ userSchema.statics.authenticate = function(inputUser, cb){
     });
   });
 };
+
 
 User = mongoose.model('User', userSchema);
 module.exports = User;

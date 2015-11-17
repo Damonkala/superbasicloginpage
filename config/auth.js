@@ -4,6 +4,7 @@ var User = require('../models/user');
 
 module.exports = function(req, res, next){
   var userId = req.cookies.userId;
+  var userName = req.cookies.username;
   User.findById(userId, function(err, user){
     if(err || !user) return res.status(401).send(err || 'Authentication required.');
     next();
