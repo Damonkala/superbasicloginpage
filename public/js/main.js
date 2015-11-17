@@ -7,6 +7,7 @@ function init() {
   $('#register').click(toRegister);
   $('#login').click(toLogin);
   $('#logout').click(logout);
+  $('#home').click(home);
 }
 
 function toRegister(){
@@ -14,6 +15,9 @@ function toRegister(){
 }
 function toLogin(){
   window.location.replace("/login");
+}
+function home(){
+  window.location.replace("/yourpage");
 }
 function logout() {
   $.post('/users/logout')
