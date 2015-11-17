@@ -1,3 +1,3 @@
-# Express Example
+# Basic login page!
 
-First, cd into the project directory, and do `npm run setup` to install the dependencies listed in the package.json and bower.json.  Then you can start the server in Node.
+You can make an account, login and logout. You can't login if you're already logged in, and you can't register if you're already logged in!
