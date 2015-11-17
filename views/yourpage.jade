@@ -8,12 +8,16 @@ html(lang="en")
     .container
       br
       .jumbotron
-        h1 Hello, #{name}
+        h1(id="title") #{name}
         h2 Email: #{email}
-        info
+        label Bio:
+        h3(id="bio") #{bio}
         button(id="changeInfo") Change Info
+        button(id="saveChanges" hidden) Save Changes
         button(id="logout") Logout
+        
         
     
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='js/pageConfig.js')
+    script(src='js/main.js')

@@ -8,7 +8,7 @@ var User = require('../models/user');
 
 router.get('/', authMiddleware, function(req, res) {
 
-    res.render('yourpage', {name: req.cookies.username, email: req.cookies.userEmail});
+    res.render('yourpage', {name: req.cookies.username, email: req.cookies.userEmail, bio: req.cookies.bio});
 
 
 });
