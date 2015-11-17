@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    title Home
+    link(href="bower_components/bootstrap/dist/css/bootstrap.min.css")
+    link(href="css/style.css")
+  body
+    .container
+      br
+      .jumbotron
+        title
+        input(id="username" placeholder="Username" required)
+        input(type="password" id="password1" placeholder="Password" required)
+        input(type="password" id="password2" placeholder="Confirm" required)
+        button(id="register") Register
+        
+      h1 Already have an account?
+      button(id="toLogin") Login
+    script(src='bower_components/jquery/dist/jquery.min.js')
+    script(src='js/register.js')
