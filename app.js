@@ -4,7 +4,16 @@ var PORT = process.env.PORT || 3000;
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
+
+var mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/userauth';
+
+var mongoose = require('mongoose');
+mongoose.connect(mongoUrl, function(err){
+  if(err) return console.log('Error connecting to Mongodb:', err);
+  console.log('Connected to MongoDB:', mongoUrl);
+});
 
 var app = express();
 
@@ -14,10 +23,16 @@ app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(express.static('public'));
 
 // ROUTES
 app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
+app.use('/yourpage', require('./routes/yourpage'));
+app.use('/login', require('./routes/login'));
+app.use('/register', require('./routes/register'));
+
 
 // 404 HANDLER
 app.use(function(req, res){
