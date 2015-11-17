@@ -21,6 +21,7 @@ function register(){
     var user = {};
     user.username = $('#username').val();
     user.password = $('#password1').val();
+    user.email = $('#email').val();
     $.post('/users/register', user)
     .done(function(data){
       alert("Welcome, " + data.username + "!")

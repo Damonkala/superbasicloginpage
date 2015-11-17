@@ -24,6 +24,7 @@ router.post('/login', function(req, res) {
   User.authenticate(req.body, function(err, user){
     res.cookie('username', user.username);
     res.cookie('userId', user._id);
+    res.cookie('userEmail', user.email);
     res.status(err ? 400 : 200).send(err || user);
   });
 });
